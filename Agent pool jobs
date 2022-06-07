@@ -1,0 +1,14 @@
+When using Microsoft-hosted agents, each job in a pipeline gets a fresh agent.
+pool:
+  name: myPrivateAgents    # your job runs on an agent in this pool
+  demands: agent.os -equals Windows_NT    # the agent must have this capability to run the job
+steps:
+- script: echo hello world
+multiple demands:
+pool:
+  name: myPrivateAgents
+  demands:
+  - agent.os -equals Darwin
+  - anotherCapability -equals somethingElse
+steps:
+- script: echo hello world
