@@ -1,0 +1,15 @@
+The full syntax to specify a server job
+jobs:
+- job: string
+  timeoutInMinutes: number
+  cancelTimeoutInMinutes: number
+  strategy:
+    maxParallel: number
+    matrix: { string: { string: string } }
+
+  pool: server
+  
+  simplified syntax:
+  jobs:
+- job: string
+  pool: server
