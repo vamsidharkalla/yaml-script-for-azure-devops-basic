@@ -1,0 +1,11 @@
+our pipeline may have multiple stages, each with multiple jobs. In that case, use the stages keyword.
+stages:
+- stage: A
+  jobs:
+  - job: A1
+  - job: A2
+
+- stage: B
+  jobs:
+  - job: B1
+  - job: B2
