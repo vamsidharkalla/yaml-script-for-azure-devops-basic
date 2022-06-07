@@ -1,0 +1,23 @@
+This YAML file has a job that runs on a Microsoft-hosted agent and outputs
+pool:
+  vmImage: 'ubuntu-latest'
+steps:
+- bash: echo "Hello world"
+we want to specify additional properties on that job. In that case, we can use the job keyword.
+jobs:
+- job: myJob
+  timeoutInMinutes: 10
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - bash: echo "Hello world"
+    Our pipeline may have multiple jobs. In that case, use the jobs keyword.
+    jobs:
+- job: A
+  steps:
+  - bash: echo "A"
+
+- job: B
+  steps:
+  - bash: echo "B"
+                
